@@ -1,0 +1,327 @@
+.wrapper{
+    position: relative;
+    display: flex;
+    width: 400px;
+    height: 500px;
+    padding: 35px;
+    background: transparent;
+    backdrop-filter: blur(20px);
+    border: 2px solid rgb(255, 255, 255, 0.5);
+    border-radius: 70px 20px;
+    box-shadow: 0 0 30px rgb(0, 0, 0, 0.5);
+    user-select: none;
+    overflow: hidden;
+}
+
+/*напрацювання/роздуми для мобільної версії
+ @media screen and (max-width: 992px)
+{
+.wrapper{
+    transform: scale(1); 
+    }
+} */
+.wrapper .logo{
+    display: flex;
+    justify-content:center;
+    align-items: center;
+    position: absolute;
+    bottom: 15px;
+    left: 15px;
+}
+
+/* Стилізація кнопки закриття */
+.wrapper .icon-close{
+    display: flex;
+    justify-content:center;
+    align-items: center;
+    position: absolute;
+    top: -1px;
+    right: -1px;
+    height: 40px;
+    width: 40px;
+    background: transparent;
+    border-bottom: 2px solid rgb(255, 255, 255, 0.5);
+    border-left: 2px solid rgb(255, 255, 255, 0.5);
+    border-bottom-left-radius: 20px;
+    border-top-right-radius: 20px;
+    transition: all .3s ease;
+    cursor: pointer;
+}
+.wrapper .icon-close:hover{
+    box-shadow: 0px 0 15px antiquewhite inset;
+}
+.wrapper .icon-close img{
+    transition: transform .15s linear;
+    transform: rotate(0deg);
+}
+.wrapper .icon-close:hover img {
+    transform: rotate(90deg) scale(1.2,1.2);
+}
+
+
+/* Стилізація форми */
+.form-wrapper{
+    display: flex;
+    align-items: center;
+    box-sizing: border-box;
+    height: 100%;
+    transition: transform .5s, opacity 1s ease;
+   }
+h2{
+    font-size: 30px;
+    text-align: center;
+    color: antiquewhite;
+    
+    /* Хороша обємний стиль шрифту */
+    /* letter-spacing: 2px;
+    text-transform: uppercase;
+    text-shadow: 2px 2px 2px #0c3632;
+    background: linear-gradient(90deg, rgb(255, 255, 255, 0.5), antiquewhite, #0c3632);
+    -webkit-text-fill-color: transparent;
+    -webkit-background-clip: text;  */
+}
+h3{
+    font-size: 18px;
+    color: rgb(255, 255, 255, 0.5);  
+    text-align: center; 
+    padding: 14px 0px 30px;
+}
+.input-box{
+    position: relative;
+    margin: 30px 0;
+    border-bottom: 2px solid rgb(255, 255, 255, 0.5);
+}
+.input-box span{
+    position: absolute;
+    right: 8px;
+    top: 10px;
+    font-size: 16px;
+    color: antiquewhite;
+ }
+.input-box label{
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    left: 5px;
+    font-size: 16px;
+    color: antiquewhite;
+    pointer-events: none;
+    transition: all .3s ease-in-out;
+}
+.input-box input:focus~label,
+.input-box input:valid~label {
+    top: -5px;
+    color: rgb(255, 255, 255, 0.5);
+    font-size: 12px; 
+}
+.input-box input{
+    width: 320px;
+    height: 40px;
+    font-size: 16px;
+    color: antiquewhite;
+    background: transparent;
+    padding: 0px 35px 0px 5px;
+    border: none;
+    outline: none;
+}
+.remember{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin: -15px 0 15px 5px;
+    font-size: 14px;
+    font-weight: 500;
+    color: antiquewhite;
+}
+.remember input[type="checkbox"]{
+    /* display: none; */
+    position: absolute;
+    opacity: 0;
+} 
+.remember input[type="checkbox"]+label{
+    display: block;
+    position: relative;
+    padding-left: 25px;
+    color:antiquewhite;
+    cursor: pointer;
+}
+
+.remember input[type="checkbox"]+label::before {
+    display: block;
+    position: absolute;
+    content: "";
+    top: 0px;
+    left: 0px;
+    width: 10px;
+    height: 10px;
+    margin-top: 1px;
+    border: 2px solid rgb(255, 255, 255, 0.5);
+    border-radius: 3px;
+    /* transform: rotate(90deg); */
+    transition: rotate .12s, border-color .08s linear; 
+}
+.remember input[type="checkbox"]:checked+label::before{
+    width: 3px;
+    top: -5px;
+    left: 5px;
+    border-radius: 0;
+    border: 3px solid antiquewhite;
+    border-top-color: transparent;
+    border-left-color: transparent;
+    transition: rotate .12s, border-color .08s linear;
+    transform: rotate(45deg);
+}
+.remember input[type="checkbox"]:checked+label{
+    transition: all .12s linear;
+    text-decoration-line: line-through;
+    text-decoration-color: antiquewhite;
+    color: rgb(255, 255, 255, 0.5);
+}
+.form-wrapper.registr .remember input[type="checkbox"]:checked+label a{
+    text-decoration-color: antiquewhite;
+}
+.remember a{
+    color: rgb(255, 255, 255, 0.5);
+    text-decoration: none;
+}
+.remember a:hover{
+    text-decoration: underline;   
+}
+
+
+.btn{
+    position: relative;
+    width: 100%;
+    height: 45px;
+    margin: 30px 0;
+    background: transparent;
+    border: none;
+    border-radius: 30px;
+    box-shadow: 0 0 20px antiquewhite;
+    filter:
+    drop-shadow(3px 3px 15px antiquewhite);
+    cursor: pointer;
+    outline: none;
+    font-size: 16px;
+    font-family: cursive;
+    color: antiquewhite;
+    letter-spacing: .3px; 
+    transition: all 2s ease;
+}
+/* .btn:hover{
+    box-shadow: none;
+    transform: scaleX(.45);
+} */
+
+/* Стилізація рядків переходу між формами авторизація/реєстрація */
+.login-register{
+    font-size: 14px;
+    color: antiquewhite;
+    text-align: center;
+}
+.login-register a{
+    color: rgb(255, 255, 255, 0.5);
+    text-decoration: none;
+    font-weight: 600;
+}    
+.login-register a:hover{
+    text-decoration: underline;
+}
+
+/* Стилізація соц. платформи */
+.social-platform {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+ }
+ .social-platform ul {
+    display: flex;
+ }
+ .social-platform ul li{
+    height: 28px;
+    width: 28px;
+    margin: 0 15px;
+    list-style: none;
+ }
+ .social-platform ul li a {
+    display: flex;
+    /* position: relative; */
+    justify-content: center;
+    align-items: center;
+    /* flex-direction: column; */
+    /* text-align: center; */
+ }
+  .social-platform ul li .icon {
+    transform: translateY(0px);
+    transition: transform .3s ease;
+ }
+ .social-platform ul li:hover a .icon {
+    transform: translateY(-10px)
+ }
+
+/* параметри соц. SVG-картинки */
+ .social-platform ul li a .icon .ionicon {
+    height: 28px;
+    width: auto;
+  }
+  .social-platform ul li a .icon .ionicon path{
+    fill: none;
+    stroke: rgb(255, 255, 255, 0.5);
+    stroke-width: 32px;
+}
+
+/* Задаємо нові параметри соц. svg icon при наведені */
+ .social-platform ul li:hover a .icon .ionicon{
+    height: 20px;
+    width: auto;
+ }
+  .social-platform ul li:hover a .icon .ionicon path{
+    stroke-width: 18px;
+ }
+  .social-platform ul li:hover:nth-child(1)  a .icon .ionicon path{
+    fill: antiquewhite;
+    stroke: #06021b;
+ }
+  .social-platform ul li:hover:nth-child(2)  a .icon .ionicon path{
+    fill: antiquewhite;
+    stroke: #06021b;
+ }
+  .social-platform ul li:hover:nth-child(3)  a .icon .ionicon path{
+    fill: antiquewhite;
+    stroke: #06021b;
+ }
+
+ /* Параметри text */
+ .social-platform ul li a .text {
+    position: absolute;
+    color: antiquewhite;
+    font-weight: 400;
+    font-size: 12px;
+    opacity: 0;
+    transform: translatey(20px);
+    transition: transform .3s ease;
+ }
+ .social-platform ul li:hover a .text{
+    opacity: 1;
+    transform: translateY(10px);
+ }
+
+/* Стилізація вікна входу при мобільній версії */
+@media(max-width: 360px) {
+    .wrapper {
+        width: 100vw;
+        height: 100%;
+        border: none;
+        border-radius: 0;
+        padding: 40px 0px;
+    }
+    .form-wrapper{
+        padding: 15px;
+    }
+       .wrapper .icon-close{
+        border-color: transparent;
+        left: 0px;
+        border-bottom-left-radius: 20px;
+        border-top-right-radius: 20px;
+    }
+}

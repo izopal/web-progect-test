@@ -1,0 +1,46 @@
+/* Вкл/Викл форми авторизації */
+.wrapper {
+    transform: scale(0);
+    /* opacity: 0; */
+    transition: transform 1s ease;
+}
+.wrapper.activebtn{
+   /* opacity: 1; */
+   transform: scale(1); 
+}
+
+header.active-navigation{
+    transform: scale(1);
+}
+
+
+/* Перехід між формами авторизація/реєстрація */
+.wrapper.active .form-wrapper.login{
+    transform: scale(0)  translate(-300px, 420px);
+}
+.wrapper .form-wrapper.registr{
+    position: absolute;
+    z-index: -1;
+    top: 0;
+    opacity: 0;
+    transform: scale(0) translate(300px, -420px); 
+}
+.wrapper.active .form-wrapper.registr{
+    transform: scale(1) translate(0,0);
+    opacity: 1;
+}
+
+
+/* Перехід між формами авторизація/Відновлення паролю */
+.wrapper .form-wrapper.recovery{
+    position: absolute;
+    top: 0;
+    transform: translatex(400px);
+}
+.wrapper.activeRecovery .form-wrapper.login{
+    transform:translateX(-400px);
+}
+.wrapper.activeRecovery .form-wrapper.recovery{
+    position: absolute;
+    transform:  translateX(0px);
+}
