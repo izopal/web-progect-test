@@ -14,7 +14,7 @@ body{
     min-height: 100vh;
     width: 100%;
     padding-top: 60px;
-    background: url('file:///D:/%D0%A0%D0%BE%D0%B1%D0%BE%D1%82%D0%B0/html%20progect%20test/web%20progect%20test%20%233/images/Chicken.jpg') no-repeat;
+    background: url('./images/Chicken.jpg') no-repeat;
     background-size: cover; /*розтягує вибрану картинку на всю ширину екруну*/
     background-position: center; /*зміщує картинку відносно екрана*/
     background-attachment: fixed; /*при прогортуванні картинка плавно пропадає*/
